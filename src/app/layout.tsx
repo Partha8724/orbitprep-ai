@@ -1,3 +1,4 @@
+import { AuthButtons } from "@/components/auth-buttons";
 import type { Metadata } from "next";
 import "./globals.css";
 
