@@ -1,4 +1,4 @@
-"use server";
+﻿"use server";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -100,5 +100,5 @@ export async function submitMockTestAction(formData: FormData) {
 
   revalidatePath("/dashboard");
   revalidatePath("/test-series");
-  redirect(`/test-series?message=Score:%20${scorePercent}%25%20Accuracy`);
+  redirect(`/test-series/results/${attempt.id}`);
 }
