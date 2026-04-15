@@ -13,3 +13,18 @@ export function getSupabaseConfig() {
     supabaseAnonKey,
   };
 }
+
+export function getSupabaseAdminConfig() {
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    throw new Error(
+      "Missing Supabase admin environment variables. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY."
+    );
+  }
+
+  return {
+    supabaseUrl,
+    serviceRoleKey,
+  };
+}
